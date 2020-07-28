@@ -19,7 +19,8 @@ public class TasksTest {
 	}
 	@Test
 	public void deveSalvarTarefaComSucesso() {
-		
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\syune\\dev\\java\\seleniumDrivers\\chromedriver.exe");
 		WebDriver driver = acessarAplicacao();
 		
 		try {
@@ -43,6 +44,13 @@ public class TasksTest {
 			driver.quit();
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	@Test
 	public void naoDeveSalvarTarefaSemDescricao() {
