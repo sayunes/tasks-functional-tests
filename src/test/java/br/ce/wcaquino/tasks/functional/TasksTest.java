@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TasksTest {
 	
 	public WebDriver acessarAplicacao() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\syune\\dev\\java\\seleniumDrivers\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\syune\\dev\\java\\seleniumDrivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("http://localhost:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -20,7 +20,7 @@ public class TasksTest {
 	@Test
 	public void deveSalvarTarefaComSucesso() {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\syune\\dev\\java\\seleniumDrivers\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\syune\\dev\\java\\seleniumDrivers\\chromedriver.exe");
 		WebDriver driver = acessarAplicacao();
 		
 		try {
@@ -44,13 +44,6 @@ public class TasksTest {
 			driver.quit();
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	@Test
 	public void naoDeveSalvarTarefaSemDescricao() {
@@ -101,6 +94,7 @@ public class TasksTest {
 			//validar mensagem de sucesso
 			String message = driver.findElement(By.id("message")).getText();
 			Assert.assertEquals("Fill the due date", message);
+			                     
 		}finally {
 			//fechar o browser
 			driver.quit();
